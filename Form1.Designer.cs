@@ -28,42 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnLogin
+            // btnIniciarSesion
             // 
-            this.btnLogin.Location = new System.Drawing.Point(55, 81);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(100, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Iniciar Sesion";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(55, 81);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(100, 23);
+            this.btnIniciarSesion.TabIndex = 0;
+            this.btnIniciarSesion.Text = "Iniciar Sesion";
+            this.btnIniciarSesion.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // txtPass
+            // txtContraseña
             // 
-            this.txtPass.Location = new System.Drawing.Point(55, 55);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 1;
+            this.txtContraseña.Location = new System.Drawing.Point(55, 55);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña.TabIndex = 1;
             // 
-            // txtUser
+            // txtNombreUsuario
             // 
-            this.txtUser.Location = new System.Drawing.Point(55, 29);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 2;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(55, 29);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreUsuario.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(217, 142);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtNombreUsuario);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.btnIniciarSesion);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -73,9 +74,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace ENEform
 {
-    partial class Administrador
+    partial class formAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtValorExtra = new System.Windows.Forms.TextBox();
@@ -49,12 +49,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRutEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.eNEDataSet = new ENEform.ENEDataSet();
+            this.administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administradorTableAdapter = new ENEform.ENEDataSetTableAdapters.AdministradorTableAdapter();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.eNEDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administradorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(522, 321);
+            this.btnSalir.Location = new System.Drawing.Point(633, 65);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 46);
             this.btnSalir.TabIndex = 49;
@@ -63,7 +69,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(522, 217);
+            this.btnEliminar.Location = new System.Drawing.Point(633, 13);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 46);
             this.btnEliminar.TabIndex = 48;
@@ -72,33 +78,27 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(522, 113);
+            this.btnActualizar.Location = new System.Drawing.Point(552, 65);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 46);
             this.btnActualizar.TabIndex = 47;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(522, 9);
+            this.btnNuevo.Location = new System.Drawing.Point(552, 13);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 46);
             this.btnNuevo.TabIndex = 46;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 216);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(439, 151);
-            this.dataGridView1.TabIndex = 45;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(309, 139);
+            this.btnCancelar.Location = new System.Drawing.Point(412, 139);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 44;
@@ -107,19 +107,20 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(125, 139);
+            this.btnGuardar.Location = new System.Drawing.Point(144, 139);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 43;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtValorExtra
             // 
             this.txtValorExtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorExtra.Location = new System.Drawing.Point(387, 93);
             this.txtValorExtra.Name = "txtValorExtra";
-            this.txtValorExtra.Size = new System.Drawing.Size(100, 22);
+            this.txtValorExtra.Size = new System.Drawing.Size(129, 22);
             this.txtValorExtra.TabIndex = 42;
             // 
             // label5
@@ -137,7 +138,7 @@
             this.txtValorHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorHora.Location = new System.Drawing.Point(387, 65);
             this.txtValorHora.Name = "txtValorHora";
-            this.txtValorHora.Size = new System.Drawing.Size(100, 22);
+            this.txtValorHora.Size = new System.Drawing.Size(129, 22);
             this.txtValorHora.TabIndex = 40;
             // 
             // label6
@@ -155,7 +156,7 @@
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(387, 37);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(129, 22);
             this.txtTelefono.TabIndex = 38;
             // 
             // label7
@@ -173,7 +174,7 @@
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(387, 9);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(129, 22);
             this.txtDireccion.TabIndex = 36;
             // 
             // label8
@@ -191,7 +192,7 @@
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.Location = new System.Drawing.Point(144, 65);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(100, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(115, 22);
             this.txtApellidos.TabIndex = 34;
             // 
             // label3
@@ -209,7 +210,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(144, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.Size = new System.Drawing.Size(115, 22);
             this.txtNombre.TabIndex = 32;
             // 
             // label2
@@ -227,7 +228,7 @@
             this.txtRutEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRutEmpleado.Location = new System.Drawing.Point(144, 9);
             this.txtRutEmpleado.Name = "txtRutEmpleado";
-            this.txtRutEmpleado.Size = new System.Drawing.Size(100, 22);
+            this.txtRutEmpleado.Size = new System.Drawing.Size(115, 22);
             this.txtRutEmpleado.TabIndex = 30;
             // 
             // label1
@@ -240,16 +241,38 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Rut Empleado";
             // 
-            // Administrador
+            // eNEDataSet
+            // 
+            this.eNEDataSet.DataSetName = "ENEDataSet";
+            this.eNEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // administradorBindingSource
+            // 
+            this.administradorBindingSource.DataMember = "Administrador";
+            this.administradorBindingSource.DataSource = this.eNEDataSet;
+            // 
+            // administradorTableAdapter
+            // 
+            this.administradorTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(47, 197);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(661, 150);
+            this.dataGridView.TabIndex = 50;
+            // 
+            // formAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 381);
+            this.ClientSize = new System.Drawing.Size(771, 381);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtValorExtra);
@@ -266,9 +289,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtRutEmpleado);
             this.Controls.Add(this.label1);
-            this.Name = "Administrador";
+            this.Name = "formAdministrador";
             this.Text = "Administrador";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Administrador_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.eNEDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administradorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +306,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtValorExtra;
@@ -297,5 +322,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRutEmpleado;
         private System.Windows.Forms.Label label1;
+        private ENEDataSet eNEDataSet;
+        private System.Windows.Forms.BindingSource administradorBindingSource;
+        private ENEDataSetTableAdapters.AdministradorTableAdapter administradorTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
